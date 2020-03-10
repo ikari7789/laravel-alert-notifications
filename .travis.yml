@@ -131,8 +131,8 @@ before_install:
   - if [ "${ILLUMINATE_VERSION}" = '5.5.*' ]; then composer require "phpunit/phpunit:~6.0" "mockery/mockery:~1.0" --no-update --dev; fi
   - if [ "${ILLUMINATE_VERSION}" = '5.6.*' ]; then composer require "phpunit/phpunit:~7.0" "mockery/mockery:~1.0" --no-update --dev; fi
   - if [ "${ILLUMINATE_VERSION}" = '5.7.*' ]; then composer require "phpunit/phpunit:~7.0" "mockery/mockery:~1.0" --no-update --dev; fi
-  - if [ "${ILLUMINATE_VERSION}" = '5.8.*' ]; then composer require "phpunit/phpunit:~7.0" "mockery/mockery:~1.0" --no-update --dev; fi
-  - if [ "${ILLUMINATE_VERSION}" = '6.*'   ]; then composer require "phpunit/phpunit:~8.0" "mockery/mockery:~1.0" --no-update --dev; fi
+  - if [ "${ILLUMINATE_VERSION}" = '5.8.*' ]; then composer require "phpunit/phpunit:~7.0" "mockery/mockery:~1.0" --no-update --dev; find ./tests -type f -exec sed -e 's/function setUp()/function setUp():void/g' -i {} \; fi
+  - if [ "${ILLUMINATE_VERSION}" = '6.*'   ]; then composer require "phpunit/phpunit:~8.0" "mockery/mockery:~1.0" --no-update --dev; find ./tests -type f -exec sed -e 's/function setUp()/function setUp():void/g' -i {} \; fi
   - composer require "illuminate/support:${ILLUMINATE_VERSION}" --no-update
 
 install:
