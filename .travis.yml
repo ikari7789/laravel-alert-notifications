@@ -137,12 +137,12 @@ before_install:
   - '[ "${ILLUMINATE_VERSION}" == "5.2.*" ] && composer require "phpunit/phpunit:~5.0" --no-update --dev'
   - '[ "${ILLUMINATE_VERSION}" == "5.3.*" ] && composer require "phpunit/phpunit:~5.0" --no-update --dev'
   - '[ "${ILLUMINATE_VERSION}" == "5.4.*" ] && composer require "phpunit/phpunit:~5.0" --no-update --dev'
-  - '[ "${ILLUMINATE_VERSION}" == "5.5.*" ] && composer require "phpunit/phpunit:~6.0" --no-update --dev'
-  - '[ "${ILLUMINATE_VERSION}" == "5.5.*" ] && composer require "phpunit/phpunit:~6.0" --no-update --dev'
-  - '[ "${ILLUMINATE_VERSION}" == "5.6.*" ] && composer require "phpunit/phpunit:~7.0" --no-update --dev'
-  - '[ "${ILLUMINATE_VERSION}" == "5.7.*" ] && composer require "phpunit/phpunit:~7.0" --no-update --dev'
-  - '[ "${ILLUMINATE_VERSION}" == "5.8.*" ] && composer require "phpunit/phpunit:~7.0" --no-update --dev'
-  - '[ "${ILLUMINATE_VERSION}" == "6.*" ] && composer require "phpunit/phpunit:~8.0" --no-update --dev'
+  - '[ "${ILLUMINATE_VERSION}" == "5.5.*" ] && composer require "phpunit/phpunit:~6.0" "mockery/mocker:~1.0" --no-update --dev'
+  - '[ "${ILLUMINATE_VERSION}" == "5.5.*" ] && composer require "phpunit/phpunit:~6.0" "mockery/mocker:~1.0" --no-update --dev'
+  - '[ "${ILLUMINATE_VERSION}" == "5.6.*" ] && composer require "phpunit/phpunit:~7.0" "mockery/mocker:~1.0" --no-update --dev'
+  - '[ "${ILLUMINATE_VERSION}" == "5.7.*" ] && composer require "phpunit/phpunit:~7.0" "mockery/mocker:~1.0" --no-update --dev'
+  - '[ "${ILLUMINATE_VERSION}" == "5.8.*" ] && composer require "phpunit/phpunit:~7.0" "mockery/mocker:~1.0" --no-update --dev'
+  - '[ "${ILLUMINATE_VERSION}" == "6.*" ] && composer require "phpunit/phpunit:~8.0" "mockery/mocker:~1.0" --no-update --dev'
   - composer require "illuminate/support:${ILLUMINATE_VERSION}" --no-update
 
 install:
