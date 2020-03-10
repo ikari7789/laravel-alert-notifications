@@ -137,12 +137,12 @@ before_install:
   - if [ "${ILLUMINATE_VERSION}" = '5.2.*' ]; then composer require "phpunit/phpunit:~5.0" --no-update --dev; fi
   - if [ "${ILLUMINATE_VERSION}" = '5.3.*' ]; then composer require "phpunit/phpunit:~5.0" --no-update --dev; fi
   - if [ "${ILLUMINATE_VERSION}" = '5.4.*' ]; then composer require "phpunit/phpunit:~5.0" --no-update --dev; fi
-  - if [ "${ILLUMINATE_VERSION}" = '5.5.*' ]; then composer require "phpunit/phpunit:~6.0" "mockery/mocker:~1.0" --no-update --dev; fi
-  - if [ "${ILLUMINATE_VERSION}" = '5.5.*' ]; then composer require "phpunit/phpunit:~6.0" "mockery/mocker:~1.0" --no-update --dev; fi
-  - if [ "${ILLUMINATE_VERSION}" = '5.6.*' ]; then composer require "phpunit/phpunit:~7.0" "mockery/mocker:~1.0" --no-update --dev; fi
-  - if [ "${ILLUMINATE_VERSION}" = '5.7.*' ]; then composer require "phpunit/phpunit:~7.0" "mockery/mocker:~1.0" --no-update --dev; fi
-  - if [ "${ILLUMINATE_VERSION}" = '5.8.*' ]; then composer require "phpunit/phpunit:~7.0" "mockery/mocker:~1.0" --no-update --dev; fi
-  - if [ "${ILLUMINATE_VERSION}" = "6.*"   ]; then composer require "phpunit/phpunit:~8.0" "mockery/mocker:~1.0" --no-update --dev; fi
+  - if [ "${ILLUMINATE_VERSION}" = '5.5.*' ]; then composer require "phpunit/phpunit:~6.0" "mockery/mockery:~1.0" --no-update --dev; fi
+  - if [ "${ILLUMINATE_VERSION}" = '5.5.*' ]; then composer require "phpunit/phpunit:~6.0" "mockery/mockery:~1.0" --no-update --dev; fi
+  - if [ "${ILLUMINATE_VERSION}" = '5.6.*' ]; then composer require "phpunit/phpunit:~7.0" "mockery/mockery:~1.0" --no-update --dev; fi
+  - if [ "${ILLUMINATE_VERSION}" = '5.7.*' ]; then composer require "phpunit/phpunit:~7.0" "mockery/mockery:~1.0" --no-update --dev; fi
+  - if [ "${ILLUMINATE_VERSION}" = '5.8.*' ]; then composer require "phpunit/phpunit:~7.0" "mockery/mockery:~1.0" --no-update --dev; fi
+  - if [ "${ILLUMINATE_VERSION}" = '6.*'   ]; then composer require "phpunit/phpunit:~8.0" "mockery/mockery:~1.0" --no-update --dev; fi
   - composer require "illuminate/support:${ILLUMINATE_VERSION}" --no-update
 
 install:
