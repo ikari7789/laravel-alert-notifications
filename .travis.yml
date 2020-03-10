@@ -12,6 +12,7 @@ addons:
   apt:
     packages:
       ant
+      libmcrypt-dev
 
 env:
   - ILLUMINATE_VERSION=5.0.*
