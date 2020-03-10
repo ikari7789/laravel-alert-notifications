@@ -45,7 +45,7 @@ php_version=$(get_php_version_int $(get_php_version))
 # PHPUnit 5.0
 if [ "${ILLUMINATE_VERSION}" = '5.0.*' ]; then
     if [ ${php_version} > 70200 ]; then
-        pecl install mcrypt
+        printf "\n" | pecl install mcrypt
     fi
     composer require "phpunit/phpunit:~5.0" --no-update --dev
 fi
