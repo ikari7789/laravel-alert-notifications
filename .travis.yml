@@ -121,6 +121,7 @@ matrix:
     - php: nightly
 
 before_install:
+  - pecl channel-update pecl.php.net
   - composer self-update
   - bash .travis/before_install.sh
 
