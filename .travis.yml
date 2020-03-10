@@ -5,31 +5,144 @@ php:
   - 7.1
   - 7.2
   - 7.3
-#  - 7.4
-#  - 8.0
-#  - nightly
+  - 7.4
+  - nightly
 
 addons:
   apt:
     packages:
       ant
 
-matrix:
-  fast_finish: true
-#  allowed_failures:
-#  - php: nightly
-#    - php: 8.0
+env:
+  - ILLUMINATE_VERSION=5.0.*
 
-before_script:
+matrix:
+  include:
+    - php: 7.0
+      env: ILLUMINATE_VERSION=5.1.*
+    - php: 7.0
+      env: ILLUMINATE_VERSION=5.2.*
+    - php: 7.0
+      env: ILLUMINATE_VERSION=5.3.*
+    - php: 7.0
+      env: ILLUMINATE_VERSION=5.4.*
+    - php: 7.0
+      env: ILLUMINATE_VERSION=5.5.*
+    - php: 7.0
+      env: ILLUMINATE_VERSION=5.6.*
+    - php: 7.0
+      env: ILLUMINATE_VERSION=5.7.*
+    - php: 7.0
+      env: ILLUMINATE_VERSION=5.8.*
+    - php: 7.0
+      env: ILLUMINATE_VERSION=6.*
+    - php: 7.1
+      env: ILLUMINATE_VERSION=5.1.*
+    - php: 7.1
+      env: ILLUMINATE_VERSION=5.2.*
+    - php: 7.1
+      env: ILLUMINATE_VERSION=5.3.*
+    - php: 7.1
+      env: ILLUMINATE_VERSION=5.4.*
+    - php: 7.1
+      env: ILLUMINATE_VERSION=5.5.*
+    - php: 7.1
+      env: ILLUMINATE_VERSION=5.6.*
+    - php: 7.1
+      env: ILLUMINATE_VERSION=5.7.*
+    - php: 7.1
+      env: ILLUMINATE_VERSION=5.8.*
+    - php: 7.1
+      env: ILLUMINATE_VERSION=6.*
+    - php: 7.2
+      env: ILLUMINATE_VERSION=5.1.*
+    - php: 7.2
+      env: ILLUMINATE_VERSION=5.2.*
+    - php: 7.2
+      env: ILLUMINATE_VERSION=5.3.*
+    - php: 7.2
+      env: ILLUMINATE_VERSION=5.4.*
+    - php: 7.2
+      env: ILLUMINATE_VERSION=5.5.*
+    - php: 7.2
+      env: ILLUMINATE_VERSION=5.6.*
+    - php: 7.2
+      env: ILLUMINATE_VERSION=5.7.*
+    - php: 7.2
+      env: ILLUMINATE_VERSION=5.8.*
+    - php: 7.2
+      env: ILLUMINATE_VERSION=6.*
+    - php: 7.3
+      env: ILLUMINATE_VERSION=5.1.*
+    - php: 7.3
+      env: ILLUMINATE_VERSION=5.2.*
+    - php: 7.3
+      env: ILLUMINATE_VERSION=5.3.*
+    - php: 7.3
+      env: ILLUMINATE_VERSION=5.4.*
+    - php: 7.3
+      env: ILLUMINATE_VERSION=5.5.*
+    - php: 7.3
+      env: ILLUMINATE_VERSION=5.6.*
+    - php: 7.3
+      env: ILLUMINATE_VERSION=5.7.*
+    - php: 7.3
+      env: ILLUMINATE_VERSION=5.8.*
+    - php: 7.3
+      env: ILLUMINATE_VERSION=6.*
+    - php: 7.4
+      env: ILLUMINATE_VERSION=5.1.*
+    - php: 7.4
+      env: ILLUMINATE_VERSION=5.2.*
+    - php: 7.4
+      env: ILLUMINATE_VERSION=5.3.*
+    - php: 7.4
+      env: ILLUMINATE_VERSION=5.4.*
+    - php: 7.4
+      env: ILLUMINATE_VERSION=5.5.*
+    - php: 7.4
+      env: ILLUMINATE_VERSION=5.6.*
+    - php: 7.4
+      env: ILLUMINATE_VERSION=5.7.*
+    - php: 7.4
+      env: ILLUMINATE_VERSION=5.8.*
+    - php: 7.4
+      env: ILLUMINATE_VERSION=6.*
+    - php: nightly
+      env: ILLUMINATE_VERSION=5.1.*
+    - php: nightly
+      env: ILLUMINATE_VERSION=5.2.*
+    - php: nightly
+      env: ILLUMINATE_VERSION=5.3.*
+    - php: nightly
+      env: ILLUMINATE_VERSION=5.4.*
+    - php: nightly
+      env: ILLUMINATE_VERSION=5.5.*
+    - php: nightly
+      env: ILLUMINATE_VERSION=5.6.*
+    - php: nightly
+      env: ILLUMINATE_VERSION=5.7.*
+    - php: nightly
+      env: ILLUMINATE_VERSION=5.8.*
+    - php: nightly
+      env: ILLUMINATE_VERSION=6.*
+  fast_finish: true
+  allowed_failures:
+    - php: nightly
+
+before_install:
   - composer self-update
+  - composer require "illuminate/support:${ILLUMINATE_VERSION}" --no-update
+
+install:
   - composer install --prefer-source --no-interaction
 
 script:
   - ant
 
 after_script:
-    - wget https://scrutinizer-ci.com/ocular.phar
-    - php ocular.phar code-coverage:upload --format=php-clover ./build/logs/clover.xml
+  - wget https://scrutinizer-ci.com/ocular.phar
+  - php ocular.phar code-coverage:upload --format=php-clover ./build/logs/clover.xml
 
 notifications:
   email: false
