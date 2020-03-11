@@ -6,7 +6,6 @@ php:
   - 7.2
   - 7.3
   - 7.4
-  - nightly
 
 addons:
   apt:
@@ -30,8 +29,6 @@ matrix:
       env: ILLUMINATE_VERSION=5.1.*
     - php: 7.4
       env: ILLUMINATE_VERSION=5.1.*
-    - php: nightly
-      env: ILLUMINATE_VERSION=5.1.*
 
     # Laravel 5.2
     - php: 7.0
@@ -43,8 +40,6 @@ matrix:
     - php: 7.3
       env: ILLUMINATE_VERSION=5.2.*
     - php: 7.4
-      env: ILLUMINATE_VERSION=5.2.*
-    - php: nightly
       env: ILLUMINATE_VERSION=5.2.*
 
     # Laravel 5.3
@@ -58,8 +53,6 @@ matrix:
       env: ILLUMINATE_VERSION=5.3.*
     - php: 7.4
       env: ILLUMINATE_VERSION=5.3.*
-    - php: nightly
-      env: ILLUMINATE_VERSION=5.3.*
 
     # Laravel 5.4
     - php: 7.0
@@ -71,8 +64,6 @@ matrix:
     - php: 7.3
       env: ILLUMINATE_VERSION=5.4.*
     - php: 7.4
-      env: ILLUMINATE_VERSION=5.4.*
-    - php: nightly
       env: ILLUMINATE_VERSION=5.4.*
 
     # Laravel 5.5
@@ -86,8 +77,6 @@ matrix:
       env: ILLUMINATE_VERSION=5.5.*
     - php: 7.4
       env: ILLUMINATE_VERSION=5.5.*
-    - php: nightly
-      env: ILLUMINATE_VERSION=5.5.*
 
     # Laravel 5.6 (PHP 7.1+)
     - php: 7.1
@@ -97,8 +86,6 @@ matrix:
     - php: 7.3
       env: ILLUMINATE_VERSION=5.6.*
     - php: 7.4
-      env: ILLUMINATE_VERSION=5.6.*
-    - php: nightly
       env: ILLUMINATE_VERSION=5.6.*
 
     # Laravel 5.7 (PHP 7.1+)
@@ -110,8 +97,6 @@ matrix:
       env: ILLUMINATE_VERSION=5.7.*
     - php: 7.4
       env: ILLUMINATE_VERSION=5.7.*
-    - php: nightly
-      env: ILLUMINATE_VERSION=5.7.*
 
     # Laravel 5.8 (PHP 7.1+)
     - php: 7.1
@@ -122,8 +107,6 @@ matrix:
       env: ILLUMINATE_VERSION=5.8.*
     - php: 7.4
       env: ILLUMINATE_VERSION=5.8.*
-    - php: nightly
-      env: ILLUMINATE_VERSION=5.8.*
 
     # Laravel 6.x (PHP 7.2+)
     - php: 7.2
@@ -132,12 +115,8 @@ matrix:
       env: ILLUMINATE_VERSION=6.*
     - php: 7.4
       env: ILLUMINATE_VERSION=6.*
-    - php: nightly
-      env: ILLUMINATE_VERSION=6.*
 
   fast_finish: true
-  allowed_failures:
-    - php: nightly
 
 before_install:
   - bash .travis/before_install.sh
