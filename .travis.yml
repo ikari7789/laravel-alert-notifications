@@ -14,58 +14,10 @@ addons:
       libmcrypt-dev
 
 env:
-  - ILLUMINATE_VERSION=5.0.*
+  - ILLUMINATE_VERSION=5.4.*
 
 matrix:
   include:
-    # Laravel 5.1
-    - php: 7.0
-      env: ILLUMINATE_VERSION=5.1.*
-    - php: 7.1
-      env: ILLUMINATE_VERSION=5.1.*
-    - php: 7.2
-      env: ILLUMINATE_VERSION=5.1.*
-    - php: 7.3
-      env: ILLUMINATE_VERSION=5.1.*
-    - php: 7.4
-      env: ILLUMINATE_VERSION=5.1.*
-
-    # Laravel 5.2
-    - php: 7.0
-      env: ILLUMINATE_VERSION=5.2.*
-    - php: 7.1
-      env: ILLUMINATE_VERSION=5.2.*
-    - php: 7.2
-      env: ILLUMINATE_VERSION=5.2.*
-    - php: 7.3
-      env: ILLUMINATE_VERSION=5.2.*
-    - php: 7.4
-      env: ILLUMINATE_VERSION=5.2.*
-
-    # Laravel 5.3
-    - php: 7.0
-      env: ILLUMINATE_VERSION=5.3.*
-    - php: 7.1
-      env: ILLUMINATE_VERSION=5.3.*
-    - php: 7.2
-      env: ILLUMINATE_VERSION=5.3.*
-    - php: 7.3
-      env: ILLUMINATE_VERSION=5.3.*
-    - php: 7.4
-      env: ILLUMINATE_VERSION=5.3.*
-
-    # Laravel 5.4
-    - php: 7.0
-      env: ILLUMINATE_VERSION=5.4.*
-    - php: 7.1
-      env: ILLUMINATE_VERSION=5.4.*
-    - php: 7.2
-      env: ILLUMINATE_VERSION=5.4.*
-    - php: 7.3
-      env: ILLUMINATE_VERSION=5.4.*
-    - php: 7.4
-      env: ILLUMINATE_VERSION=5.4.*
-
     # Laravel 5.5
     - php: 7.0
       env: ILLUMINATE_VERSION=5.5.*
