@@ -116,6 +116,14 @@ matrix:
     - php: 7.4
       env: ILLUMINATE_VERSION=6.*
 
+    # Laravel 7.x (PHP 7.2+)
+    - php: 7.2
+      env: ILLUMINATE_VERSION=7.*
+    - php: 7.3
+      env: ILLUMINATE_VERSION=7.*
+    - php: 7.4
+      env: ILLUMINATE_VERSION=7.*
+
   fast_finish: true
 
 before_install:
